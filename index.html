@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Project</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+      <div class="top-menu menu">
+        <p id="username">User: Edgar</p>
+        <p id="lives">You currently have 7 lives</p>
+        <p id="score">Score: 0</p>
+      </div
+
+        <!-- Title of the game and styling -->
+        <div class="title">
+            <h1>Hangman project!</h1>
+        </div>
+        
+        <!-- Displays number of guesses user made -->
+        <div class="guesses">Number of guesses: 
+            <span id="mistakes">0</span> of <span id="guessLimit"></span>
+        </div>
+
+
+
+        <div class="hangman-display">
+            <div class="game-image">
+                <img src="images/sample-hangman.png" alt="hangman pictures">
+            </div>
+        </div>
+
+
+        <!-- Center aligned text after graphic this is where the keyboard and word will be -->
+        <div class="text-center">
+            <h2>Guess the word</h2>
+                <h2 class="hint" id="wordHint">This is a hint to the word</h2>
+                <h2 class="word-guess" id="wordSpotlight">_ _ _ _ _</h2>
+
+            <!-- insert generated keyboard here -->
+            <div id="keyboard"></div>
+            <button class="btn btn-reset" onclick="reset()">Reset</button>
+            <button id="continueButton" class="btn btn-continue" onclick="cotinueGame()">Continue</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

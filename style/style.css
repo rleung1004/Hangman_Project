@@ -1,0 +1,51 @@
+.top-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    text-align: center;
+}
+
+.guesses {
+    text-align: center;
+}
+
+.word-guess {
+    text-transform: uppercase;
+}
+
+
+/* game image */
+.hangman-image {
+    position: relative;
+    margin: 0 auto;
+}
+
+
+
+.btn-primary {
+    text-transform: capitalize;
+    color:  black;
+    background-color: transparent;
+    border-color: rgba(0, 0, 0, 0.349);
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    text-transform: capitalize;
+    color:  rgba(0, 0, 0, 0.466);
+    background-color: transparent;
+    border-color: rgba(0, 0, 0, 0.349);
+}
+
+.btn-reset {
+    color: black;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn-reset:hover {
+    color: darkgrey;
+    background: transparent;
+    border-color: transparent;
+}
