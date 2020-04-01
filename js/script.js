@@ -102,6 +102,10 @@ function lose() {
 }
 
 function updateHangmanImage() {
+     
+    document.getElementById('hangman').src = `transparent stickman/img${mistakes + 1}.png`
+
+
     console.log("Update the hangman image to reflect wrong guess")
 }
 
@@ -140,7 +144,7 @@ function reset() {
     chooseWord();
     guessedWord();
     generateKeyboardButtons();
-
+    updateHangmanImage();
     updateMistakes();
     updateScore();
     updateLives();
