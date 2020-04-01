@@ -2,6 +2,29 @@ const answers = [
     'cat', 'dog', 'sheep', 'python',
     'life', 'poop', 'laser', 'random'
 ]
+
+const testwords = {committee: "a group of people",
+Jazz : "a style",
+daiquiri: "Type of drink",
+ dizzying : "Type of feeling",
+duplex: "Style of housing",
+dwarves: "Fictional Character",
+embezzle: "To funnel or steal out from",
+equip: "Verb",
+espionage: "Military Tactic",
+fuchsia : "A Color"
+}
+
+function pickWord (obj) {
+    let keys = Object.keys(obj);
+    let randomkey= [keys.length * Math.random() <<0]
+    console.log(keys)
+
+    console.log(obj[keys[ keys.length * Math.random() <<0]])
+    return obj[keys[ keys.length * Math.random() <<0]];
+
+} 
+
 const guessLimit = 7;
 let answer = '';
 let answerArray = []
@@ -151,6 +174,10 @@ function reset() {
     document.querySelector("#continueButton").style.display = "none";
 }
 
+function readJson() {
+    let object = JSON.parse(testwords)
+}
+
 
 function main() {
     document.querySelector('#guessLimit').textContent = guessLimit;
@@ -162,5 +189,6 @@ function main() {
     console.log(answer)
     
 }
+
 
 main();
