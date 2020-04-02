@@ -17,12 +17,11 @@ fuchsia : "A Color"
 
 function pickWord (obj) {
     let keys = Object.keys(obj);
-    let randomkey= [keys.length * Math.random() <<0]
-    console.log(keys)
-
-    console.log(obj[keys[ keys.length * Math.random() <<0]])
-    return obj[keys[ keys.length * Math.random() <<0]];
-
+    // let randomkey= [keys.length * Math.random() <<0]
+    let randomNumber = Math.floor(keys.length * Math.random())
+    let randomKey = keys[randomNumber]
+    console.log(randomKey);
+    console.log(obj[randomKey])
 } 
 
 const guessLimit = 7;
