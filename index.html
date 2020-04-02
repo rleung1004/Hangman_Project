@@ -10,42 +10,41 @@
 <body>
     
     <div class="wrapper">
+      <div id="menu">
+        <div class="top-menu menu">
+            <p id="username">User: Edgar</p>
+            <p id="lives">You currently have 7 lives</p>
+            <p id="score">Score: 0</p>
+        </div
 
-      <div class="top-menu menu">
-        <p id="username">User: Edgar</p>
-        <p id="lives">You currently have 7 lives</p>
-        <p id="score">Score: 0</p>
-      </div
-
-        <!-- Title of the game and styling -->
-        <div class="title">
-            <h1>Hangman project!</h1>
-        </div>
-        
-        <!-- Displays number of guesses user made -->
-        <div class="guesses">Number of guesses: 
-            <span id="mistakes">0</span> of <span id="guessLimit"></span>
-        </div>
-
-
-
-        <div class="hangman-display">
-            <div class="game-image">
-                <img id ='hangman' src="transparent stickman\img1.png" alt="hangman pictures">
+            <!-- Title of the game and styling -->
+            <div class="title">
+                <h1>Hangman project!</h1>
             </div>
-        </div>
+            
+            <!-- Displays number of guesses user made -->
+            <div class="guesses">Number of guesses: 
+                <span id="mistakes">0</span> of <span id="guessLimit"></span>
+            </div>
 
 
-        <!-- Center aligned text after graphic this is where the keyboard and word will be -->
-        <div class="text-center">
-            <h2>Guess the word</h2>
-                <h2 class="hint" id="wordHint">This is a hint to the word</h2>
-                <h2 class="word-guess" id="wordSpotlight">_ _ _ _ _</h2>
 
-            <!-- insert generated keyboard here -->
-            <div id="keyboard"></div>
-            <button class="btn btn-reset" onclick="reset()">Reset</button>
-            <button id="continueButton" class="btn btn-continue" onclick="cotinueGame()">Continue</button>
+            <div class="hangman-display">
+                <img id ='hangman' src="transparent stickman\img1.png" alt="hangman pictures">  
+            </div>
+
+
+            <!-- Center aligned text after graphic this is where the keyboard and word will be -->
+            <div class="text-center">
+                <h2>Guess the word</h2>
+                    <h2 class="hint" id="wordHint">This is a hint to the word</h2>
+                    <h2 class="word-guess" id="wordSpotlight">_ _ _ _ _</h2>
+
+                <!-- insert generated keyboard here -->
+                <div id="keyboard"></div>
+                <button class="btn btn-reset" onclick="reset()">Reset</button>
+                <button id="continueButton" class="btn btn-continue" onclick="continueGame()">Continue</button>
+            </div>
         </div>
     </div>
 

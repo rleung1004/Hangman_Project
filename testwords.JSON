@@ -1,11 +1,14 @@
-{  "committee": "a group of people",
-   "Jazz" : "a style",
-   "daiquiri": "Type of drink",
-    "dizzying" : "Type of feeling",
-   "duplex": "Style of housing",
-   "dwarves": "Fictional Character",
-   "embezzle": "To funnel or steal out from",
-   "equip": "Verb",
-   "espionage": "Military Tactic",
-   "fuchsia" : "A Color"
-}
+[
+  {
+    "committee": "a group of people",
+    "Jazz": "a style",
+    "daiquiri": "Type of drink",
+    "dizzying": "Type of feeling",
+    "duplex": "Style of housing",
+    "dwarves": "Fictional Character",
+    "embezzle": "To funnel or steal out from",
+    "equip": "Verb",
+    "espionage": "Military Tactic",
+    "fuchsia": "A Color"
+  }
+]
