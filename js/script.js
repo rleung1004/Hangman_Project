@@ -19,7 +19,9 @@ const testwords = {
   embezzle: "To funnel or steal out from",
   equip: "Verb",
   espionage: "Military Tactic",
-  fuchsia: "A Color"
+  fuchsia: "A Color",
+  tattoo: "a form of body modification where a design is made by inserting ink",
+  electricity: " is the set of physical phenomena associated with the presence and motion of electric charge"
 };
 
 function pickWord(obj) {
