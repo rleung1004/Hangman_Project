@@ -27,6 +27,7 @@ function pickWord(obj) {
   // let randomkey= [keys.length * Math.random() <<0]
   let randomNumber = Math.floor(keys.length * Math.random());
   let randomKey = keys[randomNumber];
+  console.log(typeof(randomKey));
   console.log(randomKey);
   console.log(obj[randomKey]);
 }
