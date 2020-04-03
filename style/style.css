@@ -87,15 +87,15 @@ html {
 
 
 /* Since image is dynamic, it is centered to the page when hangman dies. If we center*/
-img#hangman {
+/* img#hangman {
   height:20vw;
   position: inherit;
   left:20vw;
 
-} */
+} 
 .hangman-display {
   width: 100%;
-}
+} */
 #hangman {
   width: 800px;
   position: relative;
