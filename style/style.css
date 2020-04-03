@@ -87,9 +87,9 @@ html {
 
 /* Since image is dynamic, it is centered to the page when hangman dies. If we center*/
 img#hangman {
-  height:25vw;
+  height:20vw;
   position: inherit;
-  left:30%;
+  left:20vw;
 
 }
 
@@ -103,6 +103,9 @@ h2 {
 }
 
 
+#wordhint {
+  text-align: center;
+}
 
 
 

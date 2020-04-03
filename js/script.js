@@ -16,11 +16,35 @@ const answers = [
   "dog",
   "sheep",
   "python",
-  "life",
-  "poop",
-  "laser",
-  "random"
+  "jazz",
+  "dwarves",
+  "tattoo",
+  "electricity",
+  "fuchsia",
+  "espionage",
+  "embezzle",
+  "daiquiri",
+  "committee"
 ];
+
+const hints = [
+  "an evil creature",
+  "a furry creature",
+  "precursor of haggis",
+  "a reptile",
+  "type of music",
+  "A fictional character",
+  "a form of body modification where a design is made by inserting ink",
+  "is the set of physical phenomena associated with the presence and motion of electric charge",
+  "A color",
+  "A military tactic",
+  "To funnel or steal out from",
+  "Type of drink",
+  "A group of people"
+]
+
+
+
 
 const testwords = {
   committee: "a group of people",
@@ -82,6 +106,10 @@ function chooseWord() {
   for (let i = 0; 9 < answer.length; i++) {
     answer[i] = "_";
   }
+  thisHint = answers.indexOf(answer);
+  hintString = hints[thisHint]
+  document.getElementById('wordHint').innerHTML = hintString
+  console.log(`my hint ${hintString} for word ${answer}`) 
 }
 function guessedWord() {
   let splitAnswer = answer.split("");
@@ -177,7 +205,7 @@ function continueGame() {
   mistakes = 0;
   guessed = [];
   document.querySelector("#keyboard").innerHTML = "";
-
+  updateHangmanImage();
   chooseWord();
   guessedWord();
   generateKeyboardButtons();
