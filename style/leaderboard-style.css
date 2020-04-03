@@ -1,0 +1,7 @@
+#mainContainer {
+    position: relative;
+    border: 1px solid black;
+    width: 98%;
+    height: 89vh;
+    margin: 10vh auto 0;
+}

@@ -1,7 +1,9 @@
-body,
-html {
-  margin: 0;
-  background-color: white;
+#mainContainer {
+  position: relative;
+  /* border: 1px solid black; */
+  width: 95%;
+  height: 89vh;
+  margin: 5vh auto 0;
 }
 
 .top-menu {
@@ -18,32 +20,60 @@ html {
 }
 
 .word-guess {
-  text-transform: uppercase;
+  text-align: center;
+  text-transform: capitalize;
 }
 
-.btn-primary {
+.keyboard-buttons {
   text-transform: capitalize;
   color: black;
-  background-color: transparent;
-  border-color: rgba(0, 0, 0, 0.349);
+  border-color: rgba(0, 0, 0, 0.35);
   padding: 0;
-  border-radius: 15px;
+  border-radius: 10px;
   animation: colorChange 5s infinite;
-  width: 3.5vw;
-  height: auto;
-  font-size: inherit;
+  width: 10%;
   text-align: center;
 }
-@keyframes colorChange{from {background-color:white;} to {background-color: tomato}
+
+.keyboard-buttons:hover {
+  /* border: red; */
 }
 
-.btn-primary.disabled,
-.btn-primary:disabled {
+@keyframes colorChange{
+  from { background-color: rgba(242, 120, 75, 1); } 
+  to { background-color: tomato; }
+}
+
+.keyboard-buttons.disabled,
+.keyboard-buttons:disabled {
   text-transform: capitalize;
   color: rgba(0, 0, 0, 0.466);
-  background-color: transparent;
+  background-color: rgba(243, 241, 239, 0.8);
   border-color: rgba(0, 0, 0, 0.349);
+  animation: none;
 }
+
+
+@media (max-width: 600px) {
+  .keyboard-buttons {
+    text-transform: capitalize;
+    color: black;
+    border-color: rgba(0, 0, 0, 0.35);
+    padding: 0;
+    border-radius: 10px;
+    animation: colorChange 5s infinite;
+    width: 15%;
+    text-align: center;
+  }
+
+  #hangman {
+    width: 50%;
+    position: relative;
+    left: calc(50% - 12.5%);
+  }
+}
+
+
 
 .btn-reset {
   color: black;
@@ -57,63 +87,9 @@ html {
   border-color: transparent;
 }
 
-.wrapper {
-  width: 90vw;
-  height: 100vw;
-  margin: 0 auto;
-}
-
-#menu {
-  width: 100%;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-
-/* .hangman-display {
-  width: 0;
-  margin-left: 20%;
-  display: block;
-  position: relative;
-  align-items: center;
-}
-
 
 #hangman {
-  min-height: 35vh;
-  min-width: auto;
-  position: inherit;
-
-} */
-
-
-/* Since image is dynamic, it is centered to the page when hangman dies. If we center*/
-/* img#hangman {
-  height:20vw;
-  position: inherit;
-  left:20vw;
-
-} 
-.hangman-display {
-  width: 100%;
-} */
-#hangman {
-  width: 800px;
+  width: 50%;
   position: relative;
-  left: calc(50% - 400px);
+  left: calc(50% - 12.5%);
 }
-
-h2 {
-  font-size: 2vw;
-}
-
-.text-center {
-  bottom:5vh
-}
-
-
-#wordhint {
-  text-align: center;
-}
-
-
-
