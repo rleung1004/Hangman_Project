@@ -1,3 +1,16 @@
+var firebaseConfig = {
+  apiKey: "AIzaSyDtFiyzTNb7eUDLeNHfASR-sZDcljMn8eQ",
+  authDomain: "hangman-ee2cd.firebaseapp.com",
+  databaseURL: "https://hangman-ee2cd.firebaseio.com",
+  projectId: "hangman-ee2cd",
+  storageBucket: "hangman-ee2cd.appspot.com",
+  messagingSenderId: "508758567676",
+  appId: "1:508758567676:web:094859b07a9c8c1bd4c579"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
 const answers = [
   "cat",
   "dog",
@@ -19,9 +32,7 @@ const testwords = {
   embezzle: "To funnel or steal out from",
   equip: "Verb",
   espionage: "Military Tactic",
-  fuchsia: "A Color",
-  tattoo: "a form of body modification where a design is made by inserting ink",
-  electricity: " is the set of physical phenomena associated with the presence and motion of electric charge"
+  fuchsia: "A Color"
 };
 
 function pickWord(obj) {
@@ -29,7 +40,6 @@ function pickWord(obj) {
   // let randomkey= [keys.length * Math.random() <<0]
   let randomNumber = Math.floor(keys.length * Math.random());
   let randomKey = keys[randomNumber];
-  console.log(typeof(randomKey));
   console.log(randomKey);
   console.log(obj[randomKey]);
 }
@@ -121,9 +131,10 @@ function win() {
   if (wordStatus === answer) {
     console.log("Succesfully won!");
     document.querySelector("#keyboard").innerHTML =
-      "You have won a round! Keep going to increase your score!";
+      "You have won a round! Keep going to increase your score! <br> Or enter your name to post your score to leaderboard!";
     document.querySelector("#wordHint").innerHTML = "Reset the game!";
     document.querySelector("#continueButton").style.display = "inline-block";
+    document.querySelector("#submitForm").style.display = "inline-block";
   }
 }
 
@@ -175,6 +186,7 @@ function continueGame() {
   updateScore();
   updateLives();
   document.querySelector("#continueButton").style.display = "none";
+  document.querySelector("#submitForm").style.display = "none";
 }
 
 function reset() {
@@ -191,13 +203,59 @@ function reset() {
   updateScore();
   updateLives();
   document.querySelector("#continueButton").style.display = "none";
+  document.querySelector("#submitForm").style.display = "none";
 }
 
 function readJson() {
   let object = JSON.parse(testwords);
 }
 
+function sendScore() {
+  let ref = database.ref("scores");
+  let name = document.querySelector("#nameInput").value;
+  let data = {
+    name: name,
+    score: score
+  };
+  ref.push(data);
+  ref.on("value", gotData, errData);
+
+  reset();
+}
+
+function gotData(data) {
+  let scores = data.val();
+  let keys = Object.keys(scores);
+  console.log(keys);
+  keys.forEach(key => {
+    let name = scores[key].name;
+    let score = scores[key].score;
+    console.log(name, score);
+  });
+}
+
+function errData(err) {
+  console.log("Error");
+  console.log(err);
+}
+
 function main() {
+  let parent = document.createElement("div");
+  parent.id = "submitForm";
+  let input = document.createElement("input");
+  input.type = "text";
+  input.id = "nameInput";
+  input.placeholder = "Enter your name";
+  parent.appendChild(input);
+  let btn = document.createElement("button");
+  btn.type = "button";
+  btn.id = "submitScore";
+  btn.onclick = sendScore;
+  btn.innerHTML = "Submit Score";
+  parent.appendChild(btn);
+  document.querySelector(".text-center").appendChild(parent);
+
+  parent.style.display = "none";
   document.querySelector("#guessLimit").textContent = guessLimit;
   document.querySelector("#continueButton").style.display = "none";
 
