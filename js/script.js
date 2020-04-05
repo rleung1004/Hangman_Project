@@ -5,7 +5,7 @@ var firebaseConfig = {
   projectId: "hangman-ee2cd",
   storageBucket: "hangman-ee2cd.appspot.com",
   messagingSenderId: "508758567676",
-  appId: "1:508758567676:web:094859b07a9c8c1bd4c579"
+  appId: "1:508758567676:web:094859b07a9c8c1bd4c579",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -24,7 +24,7 @@ const answers = [
   "espionage",
   "embezzle",
   "daiquiri",
-  "committee"
+  "committee",
 ];
 
 const hints = [
@@ -40,11 +40,8 @@ const hints = [
   "A military tactic",
   "To funnel or steal out from",
   "Type of drink",
-  "A group of people"
-]
-
-
-
+  "A group of people",
+];
 
 const testwords = {
   committee: "a group of people",
@@ -56,7 +53,7 @@ const testwords = {
   embezzle: "To funnel or steal out from",
   equip: "Verb",
   espionage: "Military Tactic",
-  fuchsia: "A Color"
+  fuchsia: "A Color",
 };
 
 function pickWord(obj) {
@@ -91,7 +88,7 @@ function Button(letter) {
 }
 
 function generateKeyboardButtons() {
-  let letterHTML = "abcdefghijklmnopqrstuvwxyz".split("").forEach(letter => {
+  let letterHTML = "abcdefghijklmnopqrstuvwxyz".split("").forEach((letter) => {
     let button = new Button(letter);
     button.btn.onclick = () => {
       handleGuess(button.letter);
@@ -107,9 +104,9 @@ function chooseWord() {
     answer[i] = "_";
   }
   thisHint = answers.indexOf(answer);
-  hintString = hints[thisHint]
-  document.getElementById('wordHint').innerHTML = hintString
-  console.log(`my hint ${hintString} for word ${answer}`) 
+  hintString = hints[thisHint];
+  document.getElementById("wordHint").innerHTML = hintString;
+  console.log(`my hint ${hintString} for word ${answer}`);
 }
 function guessedWord() {
   let splitAnswer = answer.split("");
@@ -135,7 +132,7 @@ function handleGuess(letter) {
   document.getElementById(letter).setAttribute("disabled", true);
 
   if (answer.indexOf(letter) >= 0) {
-    answerArray.forEach(answerLetter => {
+    answerArray.forEach((answerLetter) => {
       if (answerLetter === letter) {
         score++;
         console.log("yes");
@@ -181,8 +178,9 @@ function lose() {
 }
 
 function updateHangmanImage() {
-  document.getElementById("hangman").src = `transparent stickman/img${mistakes +
-    1}.png`;
+  document.getElementById("hangman").src = `transparent stickman/img${
+    mistakes + 1
+  }.png`;
 
   console.log("Update the hangman image to reflect wrong guess");
 }
@@ -239,11 +237,11 @@ function readJson() {
 }
 
 function sendScore() {
-  let ref = database.ref("scores");
+  let ref = database.ref();
   let name = document.querySelector("#nameInput").value;
   let data = {
     name: name,
-    score: score
+    score: score,
   };
   ref.push(data);
   ref.on("value", gotData, errData);
@@ -255,7 +253,7 @@ function gotData(data) {
   let scores = data.val();
   let keys = Object.keys(scores);
   console.log(keys);
-  keys.forEach(key => {
+  keys.forEach((key) => {
     let name = scores[key].name;
     let score = scores[key].score;
     console.log(name, score);
