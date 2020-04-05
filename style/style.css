@@ -35,13 +35,13 @@
   text-align: center;
 }
 
-.keyboard-buttons:hover {
-  /* border: red; */
-}
-
-@keyframes colorChange{
-  from { background-color: rgba(242, 120, 75, 1); } 
-  to { background-color: tomato; }
+@keyframes colorChange {
+  from {
+    background-color: rgba(242, 120, 75, 1);
+  }
+  to {
+    background-color: tomato;
+  }
 }
 
 .keyboard-buttons.disabled,
@@ -52,7 +52,6 @@
   border-color: rgba(0, 0, 0, 0.349);
   animation: none;
 }
-
 
 @media (max-width: 600px) {
   .keyboard-buttons {
@@ -73,8 +72,6 @@
   }
 }
 
-
-
 .btn-reset {
   color: black;
   background-color: transparent;
@@ -86,7 +83,6 @@
   background: transparent;
   border-color: transparent;
 }
-
 
 #hangman {
   width: 50%;
