@@ -81,7 +81,7 @@ let guessed = [];
 function Button(letter) {
   this.letter = letter;
   this.btn = document.createElement("button");
-  this.btn.className = "btn btn-lg btn-primary m-2";
+  this.btn.className = "btn btn-lg btn-primary m-2 keyboard-buttons";
   this.btn.id = letter;
   this.btn.innerHTML = letter;
   document.querySelector("#keyboard").appendChild(this.btn);
@@ -213,6 +213,7 @@ function continueGame() {
   updateLives();
   document.querySelector("#continueButton").style.display = "none";
   document.querySelector("#submitForm").style.display = "none";
+  console.log(answer)
 }
 
 function reset() {
@@ -230,6 +231,7 @@ function reset() {
   updateLives();
   document.querySelector("#continueButton").style.display = "none";
   document.querySelector("#submitForm").style.display = "none";
+  console.log(answer);
 }
 
 function readJson() {
