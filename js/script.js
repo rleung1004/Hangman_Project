@@ -106,6 +106,7 @@ function chooseWord() {
   thisHint = answers.indexOf(answer);
   hintString = hints[thisHint];
   document.getElementById("wordHint").innerHTML = hintString;
+  document.getElementById("goal").textContent = "Guess the word!"
   console.log(`my hint ${hintString} for word ${answer}`);
 }
 function guessedWord() {
@@ -173,7 +174,8 @@ function lose() {
     lives--;
     updateLives();
     console.log("Lost round");
-    document.querySelector("#continueButton").style.display = "inline-block";
+    // document.querySelector("#continueButton").style.display = "inline-block";
+    document.querySelector("#goal").textContent = "You lost all your lives!"
   }
 }
 

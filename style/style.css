@@ -54,6 +54,24 @@
   animation: none;
 }
 
+.btn-reset {
+  color: black;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.btn-reset:hover {
+  color: darkgrey;
+  background: transparent;
+  border-color: transparent;
+}
+
+#hangman {
+  width: 50%;
+  position: relative;
+  left: calc(50% - 12.5%);
+}
+
 @media (max-width: 600px) {
   .keyboard-buttons {
     text-transform: uppercase;
@@ -71,22 +89,14 @@
     position: relative;
     left: calc(50% - 12.5%);
   }
-}
 
-.btn-reset {
-  color: black;
-  background-color: transparent;
-  border-color: transparent;
-}
+  #goal {
+    font-size: calc(20px + 2vw);
+  }
 
-.btn-reset:hover {
-  color: darkgrey;
-  background: transparent;
-  border-color: transparent;
-}
+  #wordHint {
+    font-size: 1rem;
+  }
 
-#hangman {
-  width: 50%;
-  position: relative;
-  left: calc(50% - 12.5%);
+
 }
