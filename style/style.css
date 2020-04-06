@@ -38,7 +38,7 @@
 }
 @keyframes colorChange {
   from {
-    background-color: rgba(242, 120, 75, 1);
+    background-color:white;
   }
   to {
     background-color: tomato;
