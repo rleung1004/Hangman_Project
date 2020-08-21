@@ -106,7 +106,7 @@ function chooseWord() {
   thisHint = answers.indexOf(answer);
   hintString = hints[thisHint];
   document.getElementById("wordHint").innerHTML = hintString;
-  document.getElementById("goal").textContent = "Guess the word!"
+  document.getElementById("goal").textContent = "Guess the word!";
   console.log(`my hint ${hintString} for word ${answer}`);
 }
 function guessedWord() {
@@ -174,8 +174,9 @@ function lose() {
     lives--;
     updateLives();
     console.log("Lost round");
-    // document.querySelector("#continueButton").style.display = "inline-block";
-    document.querySelector("#goal").textContent = "You lost all your lives!"
+    document.querySelector("#continueButton").style.display = "inline-block";
+    document.querySelector(".btn-reset").style.display = "none";
+    document.querySelector("#goal").textContent = "You lost all your lives!";
   }
 }
 
@@ -215,7 +216,7 @@ function continueGame() {
   updateLives();
   document.querySelector("#continueButton").style.display = "none";
   document.querySelector("#submitForm").style.display = "none";
-  console.log(answer)
+  console.log(answer);
 }
 
 function reset() {
